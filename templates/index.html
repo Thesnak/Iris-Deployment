@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Classification</title>
+</head>
+<body>
+   
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">	
+                <h2 class="card-heading">
+                    Iris Classification
+                </h2>
+            </div>
+            <form class="card-form" action="{{ url_for('home')}}" method="POST">
+                <div class="input">
+                    <input name="SepalLength" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label"> Sepal Length in cm</label>
+                </div>
+                            <div class="input">
+                    <input name="SepalWidth" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Sepal Width in cm</label>
+                </div>
+                            <div class="input">
+                    <input name="PetalLength" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Petal Length in cm</label>
+                </div>
+                <div class="input">
+                    <input name="PetalWidth" type="number" step="any"  class="input-field" required/>
+                    <label  class="input-label">Petal Width in cm</label>
+                </div>
+                <div class="action">
+                    <button type="submit" class="action-button">Submit</button>
+                </div>
+            </form>
+
+            <center><p style="color: darkred; font-weight: bold;">{{ prediction }}</p>
+		<img src="{{ image }}" alt="{{ prediction }}">
+</center>
+        </div>
+    </div>
+    
+</body>
+</html>
